@@ -30,32 +30,7 @@
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">
             <div class="row border-bottom white-bg">
-                <nav class="navbar navbar-static-top" role="navigation">
-                    <div class="navbar-header">
-                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                            <i class="fa fa-reorder"></i>
-                        </button>
-                        <a href="index_v5.html#" class="navbar-brand">在线聊天</a>
-                    </div>
-                    <div class="navbar-collapse collapse" id="navbar">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a aria-expanded="false" role="button" href="index.html"> 返回首页</a>
-                            </li>
-                             <li class="active">
-                                <a aria-expanded="false" role="button" href="index.html"> 我的资料</a>
-                            </li>
-                            <li class="active">
-                                <a aria-expanded="false" role="button" href="index.html"> 查找好友</a>
-                            </li>
-                           
-                           <li class="active">
-                                <a aria-expanded="false" role="button" href="index.html"> 退出</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </nav>
+                	<%@include file="./head.jsp" %>
             </div>
             <div class="wrapper wrapper-content">
 <div class="row">

@@ -21,7 +21,8 @@
     <link href="${pageContext.request.contextPath}/css/style.min.css?v=4.1.0" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/plugins/simditor/simditor.css" />
+   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/plugins/simditor/simditor-emoji.css" />
 <style type="text/css">
 .chat-message .send{
 float: 	right;
@@ -109,22 +110,6 @@ float: 	right;
 
     <!-- 自定义js -->
     <script src="js/content.min.js?v=1.0.0"></script>
-
-
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
-
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-
-    <!-- Peity demo -->
-    <script src="js/demo/peity-demo.min.js"></script>
-
 <script src="//cdn.bootcss.com/sockjs-client/1.0.3/sockjs.js"></script>
 <script src="//cdn.bootcss.com/stomp.js/2.3.3/stomp.js"></script>
 </body>

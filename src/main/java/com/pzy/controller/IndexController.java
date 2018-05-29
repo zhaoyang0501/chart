@@ -9,11 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.pzy.entity.User;
+import com.pzy.service.RoomService;
 import com.pzy.service.UserService;
 /***
  * 后台首页，处理后台登录验证权限等操作
  * @author qq:263608237
- *
+ *题目：基于MVC的网络聊天室
+
+背景：随着互联网的普及，父母辈的老年人也学会使用互联网，但是现在网络大部分聊天室都是为年轻人设计。本设计目的在于设计一款适用于老年人的聊天室，
+让老年人也可以在互联网上享受乐趣，远离孤独。
+
+技术：网页采用HTML+CSS+Javascript等
+ 后端采用MVC框架
+
+功能：注册等基本功能，好友聊天（包括群聊、需要表情功能），
+专题聊天室（以一个主题创建多人聊天室），
+在线医生咨询导航（将页面导航向在线医生咨询网站），
+个人资料页面（填写个人资料界面），首页（新闻推送页面）
  */
 @Controller
 @RequestMapping("/admin")
@@ -22,10 +34,19 @@ public class IndexController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private RoomService roomService;
+	
 	@RequestMapping("center")
 	public String center() {
 		return "admin/center";
 	}
+	
+	@RequestMapping("news")
+	public String news() {
+		return "admin/news";
+	}
+	
 	@RequestMapping("center/docenter")
 	public String docenter(User user,Model model,HttpSession httpSession) {
 		User newUser=userService.find(user.getId());
@@ -61,6 +82,22 @@ public class IndexController {
 		return "admin/center/index";
 	}
 	
+	@RequestMapping("grouproom")
+	public String grouproom(Model model,HttpSession httpSession) {
+		User user=(User)httpSession.getAttribute("user");
+		model.addAttribute("user",userService.find(user.getId()));
+		model.addAttribute("rooms",roomService.findAll());
+		return "admin/grouproom";
+	}
+	
+	@RequestMapping("ingrouproom")
+	public String ingrouproom(Model model,HttpSession httpSession,Long id) {
+		User user=(User)httpSession.getAttribute("user");
+		model.addAttribute("user",userService.find(user.getId()));
+		model.addAttribute("rooms",roomService.findAll());
+		model.addAttribute("room",roomService.get(id));
+		return "admin/grouproom";
+	}
 	
 	@RequestMapping("chatroom")
 	public String chatroom(Model model,HttpSession httpSession,Long fid) {

@@ -2,6 +2,8 @@ package com.pzy.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Chat {
 	private Long userid;
 	private User user;
@@ -13,8 +15,19 @@ public class Chat {
 	private String remark;
 	private String sessionid;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
 	private Date chatDate;
 	
+	private String roomid;
+	
+	public String getRoomid() {
+		return roomid;
+	}
+
+	public void setRoomid(String roomid) {
+		this.roomid = roomid;
+	}
+
 	public Long getFromuserid() {
 		return fromuserid;
 	}

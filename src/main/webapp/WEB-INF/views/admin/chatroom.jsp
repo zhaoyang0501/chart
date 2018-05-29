@@ -21,6 +21,8 @@
     <link href="${pageContext.request.contextPath}/css/style.min.css?v=4.1.0" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+ <link media="all" rel="stylesheet" type="text/css" href="http://simditor.tower.im/assets/styles/simditor.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/js/plugins/simditor/simditor-emoji.css" />
 
 <style type="text/css">
 .chat-message .send{
@@ -50,7 +52,7 @@ float: 	right;
                 <div class="ibox chat-view">
 
                     <div class="ibox-title">
-                        <small class="pull-right text-muted">最新消息：2016-02-02 18:39:23</small>与${friend.realname }聊天中....
+                        <small class="pull-right text-muted"></small>与${friend.realname }聊天中....
                     </div>
 
 
@@ -117,7 +119,7 @@ float: 	right;
                     By：<a href="../../index.html" target="_blank"> blog</a>
                 </div>
                 <div>
-                    <strong>Copyright</strong> H+ &copy; 2016
+                    <strong>Copyright</strong> H+ &copy; 2018
                 </div>
             </div>
 
@@ -129,30 +131,25 @@ float: 	right;
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.4.0"></script>
 
 
-
-    <!-- 自定义js -->
-    <script src="js/content.min.js?v=1.0.0"></script>
-
-
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
-
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-
-    <!-- Peity demo -->
-    <script src="js/demo/peity-demo.min.js"></script>
-
 <script src="//cdn.bootcss.com/sockjs-client/1.0.3/sockjs.js"></script>
 <script src="//cdn.bootcss.com/stomp.js/2.3.3/stomp.js"></script>
+
+<script type="text/javascript" src="http://simditor.tower.im/assets/scripts/module.js"></script>
+<script type="text/javascript" src="http://simditor.tower.im/assets/scripts/uploader.js"></script>
+<script type="text/javascript" src="http://simditor.tower.im/assets/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="http://simditor.tower.im/assets/scripts/simditor.js"></script>
+<script src="${pageContext.request.contextPath}/js/plugins/simditor/simditor-emoji.js"></script>
 <script>
 	 $(document).ready(function(){
 		 connect();
+		 editor = new Simditor({
+		      textarea: $('#message'),
+		      toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color',  'blockquote',  'link', 'emoji'],
+			  emoji: {
+			  		imagePath: '${pageContext.request.contextPath}/images/emoji/'
+			  	}
+		    });
+		 
 	 });
         var stompClient = null;
              
@@ -172,7 +169,7 @@ float: 	right;
                             " <img class='message-avatar send' src='${pageContext.request.contextPath}/img/"+t.formuser.head+"' alt='''>"+
                             " <div class='message'>"+
                             "     <a class='message-author' href=''> "+t.formuser.realname+" </a>"+
-                            "     <span class='message-date'>  2016-02-02 - 11:12:36 </span>"+
+                            "     <span class='message-date'> "+t.chatDate+" </span>"+
                             "    <span class='message-content'>"+
                             t.remark+
                             "    </span>"+
@@ -198,7 +195,7 @@ float: 	right;
             " <img class='message-avatar send' src='${pageContext.request.contextPath}/img/${user.head}' alt='''>"+
             " <div class='message'>"+
             "     <a class='message-author' href=''> ${user.realname} </a>"+
-            "     <span class='message-date'>  2016-02-02 - 11:12:36 </span>"+
+            "     <span class='message-date'>  "+new Date()+" </span>"+
             "    <span class='message-content'>"+
             message+
             "    </span>"+

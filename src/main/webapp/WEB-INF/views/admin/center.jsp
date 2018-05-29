@@ -52,20 +52,71 @@ float: 	right;
                                 <img alt="image" class="img-circle m-t-xs img-responsive" src="${pageContext.request.contextPath}/img/a2.jpg">
                             </div>
                         </div>
-                        </a><div class="col-sm-8"><a href="profile.html">
-                            <h3><strong>${user.realname }（ ${user.username }）</strong></h3>
-                            <p><i class="fa fa-map-marker"></i> ${user.address }</p>
-                            </a><address><a href="profile.html">
-                            <strong>Baidu, Inc.</strong><br>
-                            	年龄:${user.age }<br>
-                            	性别:${user.sex }<br>
-                            	星座:${user.stasign }<br>
-                            	血型:${user.bloodtype }<br>
-                            	个性签名:${user.remark }<br>
-                           </a><br>
+                        </a>
+                        
+                        
+                        
+                         <div class="col-sm-8 b-r">
+                            <form class="form-horizontal" action="" method="get">
+		                           <input name='id' type="hidden"/>
+		                           	<table class='table table-bordered'>
+		                           		<thead>
+		                           		<tr style="text-align: center;" ><td colspan="6" ><h3>个人信息<h3></h3></td></tr>
+		                           		</thead>
+		                           		<tbody>
+		                           			
+		                           			<tr>
+		                           				<td>用户名</td>
+		                           				<td> <input value="${user.username }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>姓名</td>
+		                           				<td> <input value="${user.realname }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			
+		                           			<tr>
+		                           			<td>性别</td>
+		                           				<td>
+												 <select class="form-control">
+												 	<option>男</option>
+												 </select>
+		                           				</td>
+		                           			</tr>
+		                           			
+		                           				
+		                           			<tr>
+		                           				<td>地址</td>
+		                           				<td>  <input value="${user.address }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>年龄</td>
+		                           				<td>  <input value="${user.age }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			<tr>
+		                           				<td>星座</td>
+		                           				<td>  <input value="${user.stasign }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			
+											<tr>
+												<td>个性签名</td>
+		                           				<td> <input value="${user.remark }" name='chinesename' type="text" class="form-control"> </td>
+		                           			</tr>
+		                           			
+		                           			
+		                           			<tr>
+												<td>密码</td>
+		                           				<td> <input value="${user.password }" name='password' type="password" class="form-control"> </td>
+		                           			</tr>
+		                           			
+		                           		
+		                           			
+		                           		</tbody>
+		                           	</table>
+		                           	<button class="btn btn-primary text-center " onclick="fun_submit()" type="button"><i class="fa fa-check"></i>&nbsp;提交修改</button>
+		                           	</form>
+                            </div>
                             
-                        </address>
-                        </div>
+                            
                         <div class="clearfix"></div>
                     
                 </div>

@@ -11,7 +11,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
   
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/userChat");
+        config.enableSimpleBroker("/userChat","/userRoom");
         config.setApplicationDestinationPrefixes("/websocket");
     }
   

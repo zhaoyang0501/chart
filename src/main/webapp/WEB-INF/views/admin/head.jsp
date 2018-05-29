@@ -11,15 +11,28 @@
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
                             <li class="active">
-                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/index"> 返回首页</a>
+                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/news"> 首页</a>
                             </li>
+                            
+                             <li class="active">
+                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/friend"> 查找好友</a>
+                            </li>
+                            
+                             <li class="active">
+                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/index"> 在线聊天</a>
+                            </li>
+                            
+                            <li class="active">
+                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/ingrouproom?id=1"> 聊天室</a>
+                            </li>
+                            
                              <li class="active">
                                 <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/center"> 我的资料</a>
                             </li>
-                            <li class="active">
-                                <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/friend"> 查找好友</a>
-                            </li>
                            
+                            <li class="active">
+                                <a aria-expanded="false" role="button" href="https://www.120ask.com/"> 在线医生</a>
+                            </li>
                            <li class="active">
                                 <a aria-expanded="false" role="button" href="${pageContext.request.contextPath}/admin/loginout"> 退出</a>
                             </li>
